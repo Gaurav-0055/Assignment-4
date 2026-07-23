@@ -58,22 +58,22 @@ Note: The dataset is not included in this repository. Please download it directl
 
 | Metric | Score |
 |---|---|
-| Accuracy | *(fill in after running notebook)* |
-| Precision | *(fill in after running notebook)* |
-| Recall | *(fill in after running notebook)* |
-| F1-Score | *(fill in after running notebook)* |
+| Accuracy | 0.9561 |
+| Precision | 0.9744 |
+| Recall | 0.9048 |
+| F1-Score | 0.9383 |
 
 **Observations**
 
-1. The model achieved strong overall accuracy, indicating that KNN performs well on this dataset once features are properly scaled.
-2. Recall for the malignant class is of particular clinical importance, as a false negative (failing to identify a malignant tumor) carries greater consequence than a false positive.
-3. The confusion matrix indicates that most misclassifications occur near the decision boundary between the two classes.
+1. The model achieved an accuracy of 95.61%, indicating that KNN performs well on this dataset once features are properly scaled.
+2. Precision (97.44%) is notably higher than recall (90.48%), meaning the model is very reliable when it predicts malignancy but still misses a small proportion of actual malignant cases — a gap worth noting given the clinical cost of false negatives.
+3. The F1-score of 0.9383 reflects a strong overall balance between precision and recall, though the recall gap suggests that tuning K or exploring alternative distance metrics could further improve sensitivity to malignant cases.
 
 ---
 
 ## Conclusion
 
-This project applied the K-Nearest Neighbors algorithm to classify breast tumors as Malignant or Benign using the Breast Cancer Wisconsin Diagnostic Dataset. Following preprocessing — including encoding of the target variable and standardization of all numerical features — the model achieved strong classification performance at K = 5, with solid precision and recall scores.
+This project applied the K-Nearest Neighbors algorithm to classify breast tumors as Malignant or Benign using the Breast Cancer Wisconsin Diagnostic Dataset. Following preprocessing — including encoding of the target variable and standardization of all numerical features — the model achieved strong classification performance at K = 5, with an accuracy of 95.61%, precision of 97.44%, recall of 90.48%, and an F1-score of 0.9383.
 
 Feature scaling proved essential for KNN, as the algorithm relies on Euclidean distance between data points; without normalization, features with larger numeric ranges, such as area or perimeter, would disproportionately influence the distance calculation and distort classification outcomes.
 
